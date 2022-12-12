@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.container{
+    display: flex;
+
+    margin: auto;
+    width: 303px;
+
+}
+
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    
+    width: 302px;
+    border: 1px solid black;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    font-size: 100px;
+    color: darkblue;
+
+
+    line-height: 50px;
+    display: inline-block;
+    font-size: 25px;
+    border: 1px solid black;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: background .1s;
+}
