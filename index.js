@@ -1,5 +1,5 @@
 const grid = document.querySelector(".grid");
-const btnReset = document.querySelector('.btn-reset')
+const btnReset = document.querySelector(".btn-reset");
 let player = "X";
 const win = [
   [1, 2, 3],
@@ -41,33 +41,33 @@ function onClick(evt) {
 
   if (evt.target.textContent) {
     return;
-}
+  }
 
   if (!evt.target.textContent) {
     evt.target.textContent = `${player}`;
-}
+  }
 
-if (player === "X") {
+  if (player === "X") {
     playerX.push(id);
     result = isWinner(playerX);
-}
+  }
 
-if (player === "0") {
+  if (player === "0") {
     player0.push(id);
     result = isWinner(player0);
-}
+  }
 
-setTimeout(() => {
+  setTimeout(() => {
     if (result) {
-        winerModal(player);
-        return;
+      winerModal(player);
+      return;
     }
     player = player === "X" ? "0" : "X";
-}, 150);
+  }, 150);
 }
 
 function winerModal(winer) {
-    const modal = `
+  const modal = `
     <div class="winner">
     <img src="https://cdn-icons-png.flaticon.com/512/5052/5052129.png" alt="" class="image">
     <p class="text">Сongratulations</p>
@@ -76,13 +76,12 @@ function winerModal(winer) {
 </div>
     `;
 
-    grid.innerHTML = modal;
-  btnReset.classList.add("hidden")
+  grid.innerHTML = modal;
+  btnReset.classList.add("hidden");
 
+  const btnClose = document.querySelector(".close");
 
-    const btnClose = document.querySelector('.close')
-    
-    btnClose.addEventListener("click", onRestart);
+  btnClose.addEventListener("click", onRestart);
 }
 
 function onRestart() {
@@ -91,7 +90,7 @@ function onRestart() {
   player0.splice(0, 10);
   grid.innerHTML = createMarkup();
   btnReset.classList.remove("hidden");
-  return
+  return;
 }
 
 // const content = document.querySelector('.grid');

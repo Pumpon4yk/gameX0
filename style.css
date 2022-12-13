@@ -1,148 +1,137 @@
-*{
-    box-sizing: border-box;
-    font-family: sans-serif;
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-
-.container{
-    display: flex;
-    flex-direction: column;
-    padding-top: 15px;
-    margin: 0 auto;
-    
-
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  margin: 0 auto;
 }
 
-.titel-game{
-    font-size: 50px;
-    text-align: center;
-    color: rgb(66, 37, 233);
-    margin: 0;
-    margin-bottom: 200px;
+.titel-game {
+  font-size: 50px;
+  text-align: center;
+  color: rgb(66, 37, 233);
+  margin: 0;
+  margin-bottom: 200px;
 }
-@media screen and (max-width: 1199px){
-    .titel-game { 
-        cursor: none;
-        margin-bottom: 50px;
-
-}
-}
-
-
-.grid{
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: auto;
-margin-right: auto;
-    width: 302px;
-    /* border: 1px solid black; */
-    user-select: none;
+@media screen and (max-width: 1199px) {
+  .titel-game {
+    cursor: none;
+    margin-bottom: 50px;
+  }
 }
 
-.item{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;
-    font-size: 100px;
-    color: darkblue;
-    cursor: pointer;
-
-    user-select: none;
-
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  user-select: none;
 }
 
-@media screen and (max-width: 1199px){
-    .item { 
-        cursor: none;
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  font-size: 100px;
+  color: darkblue;
+  cursor: pointer;
 
-}
-}
-
-.btn-reset{
-    width: 300px;
-height: 70px;
-margin-left: auto;
-margin-right: auto;
-font-size: 50px;
-background-color: yellowgreen;
-border: 1px solid teal;
-
-opacity: 1;
-visibility: visible;
+  user-select: none;
 }
 
-.btn-reset.hidden{
-    opacity: 0;
-    visibility: hidden;
+@media screen and (max-width: 1199px) {
+  .item {
+    cursor: none;
+  }
 }
 
+.btn-reset {
+  width: 300px;
+  height: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 50px;
+  background-color: yellowgreen;
+  border: 1px solid teal;
 
-.winner{
-
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    
-    position: absolute;
-   padding: 30px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    height: 700px;
-    background: rgb(190, 223, 129);
-    text-align: center;
-
-    border-radius: 20px;
-    z-index: 10;
+  opacity: 1;
+  visibility: visible;
 }
-@media screen and (max-width: 767px){
-    .winner { 
+
+.btn-reset.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.winner {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  position: absolute;
+  padding: 30px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 700px;
+  background: rgb(190, 223, 129);
+  text-align: center;
+
+  border-radius: 20px;
+  z-index: 10;
+}
+@media screen and (max-width: 767px) {
+  .winner {
     width: 305px;
     height: 500px;
-padding: 15px;
-}
-}
-
-.image{
-    width: 150px;
-    height: 150px;
+    padding: 15px;
+  }
 }
 
-.text{
-    color: green;
-    font-size: 50px;
-    padding: 30px, 0;
-}
-@media screen and (max-width: 767px){
-    .text { 
-        font-size: 30px;
-        padding: 15px, 0;
-}
+.image {
+  width: 150px;
+  height: 150px;
 }
 
-
-.title{
-    font-size: 150px;
-    margin: 0;
-    margin-bottom: auto;
-    color: darkblue;
+.text {
+  color: green;
+  font-size: 50px;
+  padding: 30px, 0;
 }
-@media screen and (max-width: 767px){
-    .title { 
-        font-size: 80px;
-}
-}
-
-.close{
-    width: 100px;
-    height: 50px;
+@media screen and (max-width: 767px) {
+  .text {
     font-size: 30px;
+    padding: 15px, 0;
+  }
+}
 
-    border: 2px solid ghostwhite;
-    border-radius: 5px;
-    background-color: burlywood;
+.title {
+  font-size: 150px;
+  margin: 0;
+  margin-bottom: auto;
+  color: darkblue;
+}
+@media screen and (max-width: 767px) {
+  .title {
+    font-size: 80px;
+  }
+}
+
+.close {
+  width: 100px;
+  height: 50px;
+  font-size: 30px;
+
+  border: 2px solid ghostwhite;
+  border-radius: 5px;
+  background-color: burlywood;
 }
