@@ -7,19 +7,35 @@
 .container{
     display: flex;
     flex-direction: column;
-padding-top: 200px;
+    padding-top: 15px;
     margin: 0 auto;
-    width: 303px;
     
 
 }
 
+.titel-game{
+    font-size: 50px;
+    text-align: center;
+    color: rgb(66, 37, 233);
+    margin: 0;
+    margin-bottom: 200px;
+}
+@media screen and (max-width: 1199px){
+    .titel-game { 
+        cursor: none;
+        margin-bottom: 50px;
+
+}
+}
+
+
 .grid{
     display: flex;
     flex-wrap: wrap;
-    
+    margin-left: auto;
+margin-right: auto;
     width: 302px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     user-select: none;
 }
 
@@ -46,14 +62,23 @@ padding-top: 200px;
 }
 
 .btn-reset{
-    width: 302px;
+    width: 300px;
 height: 70px;
 margin-left: auto;
 margin-right: auto;
 font-size: 50px;
 background-color: yellowgreen;
 border: 1px solid teal;
+
+opacity: 1;
+visibility: visible;
 }
+
+.btn-reset.hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+
 
 .winner{
 
@@ -95,7 +120,7 @@ padding: 15px;
 @media screen and (max-width: 767px){
     .text { 
         font-size: 30px;
-        padding: 20px, 0;
+        padding: 15px, 0;
 }
 }
 

@@ -75,8 +75,10 @@ function winerModal(winer) {
     <button class="close" type="button">Close</button>
 </div>
     `;
-    
+
     grid.innerHTML = modal;
+  btnReset.classList.add("hidden")
+
 
     const btnClose = document.querySelector('.close')
     
@@ -88,7 +90,7 @@ function onRestart() {
   playerX.splice(0, 10);
   player0.splice(0, 10);
   grid.innerHTML = createMarkup();
-
+  btnReset.classList.remove("hidden");
   return
 }
 
