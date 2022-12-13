@@ -9,6 +9,7 @@
 padding-top: 200px;
     margin: 0 auto;
     width: 303px;
+    
 
 }
 
@@ -31,6 +32,7 @@ padding-top: 200px;
     color: darkblue;
     cursor: pointer;
 
+    user-select: none;
 
 }
 
@@ -68,7 +70,6 @@ border: 1px solid teal;
     width: 305px;
     height: 500px;
 padding: 15px;
-
 }
 }
 

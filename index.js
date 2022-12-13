@@ -60,8 +60,6 @@ if (player === "0") {
 setTimeout(() => {
     if (result) {
         winerModal(player);
-
-        // onRestart();
         return;
     }
     player = player === "X" ? "0" : "X";
@@ -77,10 +75,11 @@ function winerModal(winer) {
     <button class="close" type="button">Close</button>
 </div>
     `;
-
+    
     grid.innerHTML = modal;
+    
     const btnClose = document.querySelector('.close')
-
+    
     btnClose.addEventListener("click", onRestart);
 }
 
