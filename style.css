@@ -38,6 +38,13 @@ padding-top: 200px;
 
 }
 
+@media screen and (max-width: 1199px){
+    .item { 
+        cursor: none;
+
+}
+}
+
 .btn-reset{
     width: 302px;
 height: 70px;
