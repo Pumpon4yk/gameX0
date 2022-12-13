@@ -1,35 +1,96 @@
-const grid = document.querySelector('.grid')
+const grid = document.querySelector(".grid");
+const btnReset = document.querySelector('.btn-reset')
+let player = "X";
+const win = [
+  [1, 2, 3],
+  [3, 6, 9],
+  [4, 5, 6],
+  [7, 8, 9],
+  [1, 4, 7],
+  [2, 5, 8],
+  [1, 5, 9],
+  [3, 5, 7],
+];
+const playerX = [];
+const player0 = [];
 
-
+grid.innerHTML = createMarkup();
+grid.addEventListener("click", onClick);
+btnReset.addEventListener("click", onRestart);
 
 function createMarkup() {
-    let box = '';
-    
-    for (let i = 1; i <= 9; i += 1) {
-        box += `<div class='box' data-id='${i}'></div>`;
-    }
-    return box;
+  let box = "";
+
+  for (let i = 1; i <= 9; i += 1) {
+    box += `<div class="item" data-id="${i}"></div>`;
+  }
+  return box;
 }
 
-grid.insertAdjacentHTML('beforeend', createMarkup())
-grid.addEventListener('click', onClick)
+function isWinner(arr) {
+  return win.some((item) => item.every((id) => arr.includes(id)));
+}
 
-
-
-let player = 'X';
 function onClick(evt) {
+  const id = Number(evt.target.dataset.id);
+  let result;
 
-    // console.log(evt);
-    if (!evt.target.classList.contains('box')) {
-        return
+  if (!evt.target.classList.contains("item")) {
+    return;
+  }
+
+  if (evt.target.textContent) {
+    return;
+}
+
+  if (!evt.target.textContent) {
+    evt.target.textContent = `${player}`;
+}
+
+if (player === "X") {
+    playerX.push(id);
+    result = isWinner(playerX);
+}
+
+if (player === "0") {
+    player0.push(id);
+    result = isWinner(player0);
+}
+
+setTimeout(() => {
+    if (result) {
+        winerModal(player);
+
+        // onRestart();
+        return;
     }
+    player = player === "X" ? "0" : "X";
+});
+}
 
-    if (!evt.target.textContents) {
-        evt.target.textContents = player;
-    }
-    player = player === "X" ? "O" : "X";
+function winerModal(winer) {
+    const modal = `
+    <div class="winner">
+    <img src="https://cdn-icons-png.flaticon.com/512/5052/5052129.png" alt="" class="image">
+    <p class="text">Сongratulations</p>
+    <h2 class="title">${winer}</h2>
+    <button class="close" type="button">Close</button>
+</div>
+    `;
 
-    console.log(player);
+    grid.innerHTML = modal;
+    const btnClose = document.querySelector('.close')
+
+    btnClose.addEventListener("click", onRestart);
+}
+
+function onRestart() {
+  player = "X";
+  playerX.splice(0, 10);
+  player0.splice(0, 10);
+  grid.innerHTML = createMarkup();
+
+  return
 }
 
 // const content = document.querySelector('.grid');
@@ -37,7 +98,6 @@ function onClick(evt) {
 // content.insertAdjacentHTML('beforeend', createMarkup());
 // content.addEventListener('click', onClick);
 // restart.addEventListener('click', onRestart);
-
 
 // const X_KEY = 'PlayerX';
 // const O_KEY = 'PlayerO';
@@ -55,8 +115,6 @@ function onClick(evt) {
 //   [3, 5, 7]
 // ];
 
-
-
 // function startGame() {
 //   [...content.children].forEach(item => {
 //     const id = Number(item.dataset.id)
@@ -73,8 +131,6 @@ function onClick(evt) {
 // // const test = [1, 2, 3]
 // // const isTrue = test.every(id => stepX.includes(id));
 // // console.log(win.some(item => console.log(item)));
-
-
 
 // function isWinner(arr) {
 //   return win.some(item => item.every(id => arr.includes(id)))
@@ -116,11 +172,6 @@ function onClick(evt) {
 //     alert('Change!!!')
 //   }
 // }
-
-
-
-
-
 
 // function onRestart() {
 //   player = "X";
