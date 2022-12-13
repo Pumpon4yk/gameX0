@@ -63,7 +63,7 @@ setTimeout(() => {
         return;
     }
     player = player === "X" ? "0" : "X";
-});
+}, 150);
 }
 
 function winerModal(winer) {
@@ -77,7 +77,7 @@ function winerModal(winer) {
     `;
     
     grid.innerHTML = modal;
-    
+
     const btnClose = document.querySelector('.close')
     
     btnClose.addEventListener("click", onRestart);
